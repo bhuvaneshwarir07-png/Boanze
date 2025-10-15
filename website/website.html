@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookHaven</title>
+  <style>
+    /* ---------- GLOBAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #f7faff, #e9efff);
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    nav {
+      background-color: #1e63ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 50px;
+      color: #fff;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav .logo::before {
+      content: "📘";
+      margin-right: 8px;
+    }
+
+    nav .search-bar input {
+      width: 300px;
+      padding: 8px 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    nav .upload-btn {
+
+      color: #1e63ff;
+      border-radius: 5px;
+      padding: 6px 12px;
+      font-weight: 600;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    nav .upload-btn:hover {
+      background: #dbe4ff;
+    }
+
+    /* ---------- HEADER ---------- */
+    .header {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      color: #003399;
+    }
+
+    .header p {
+      color: #555;
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    /* ---------- CATEGORIES ---------- */
+    .categories {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .categories h3 {
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+
+    .category-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+    }
+
+    .category-buttons button {
+      border: 1px solid #c5d1ff;
+      background-color: #f0f3ff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .category-buttons button.active {
+      background-color: #1e63ff;
+      color: white;
+    }
+
+    .category-buttons button:hover {
+      background-color: #c5d1ff;
+    }
+
+    /* ---------- BOOK SECTION ---------- */
+    .book-section {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .book-card {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      border-radius: 15px;
+      width: 180px;
+      margin: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .book-card h4 {
+      font-size: 1rem;
+      color: #003399;
+      margin-bottom: 5px;
+    }
+
+    .book-card p {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    /* ---------- NO BOOKS ---------- */
+    .no-books {
+      margin-top: 80px;
+      text-align: center;
+      color: #555;
+    }
+
+    .no-books .icon {
+      font-size: 60px;
+      color: #a0a8c4;
+    }
+
+    .no-books h2 {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .no-books p {
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+      }
+      nav .search-bar input {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">BookHaven</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search books by title, author, or category..." id="searchBar">
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Community</a>
+      <a href="#">About</a>
+      <a href="upload a book.html" class="upload-btn">Upload Book</a>
+      <a href="login.html">login</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="header">
+    <h1>Welcome to BookHaven</h1>
+    <p>Discover, share, and explore thousands of books from our community</p>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <h3>📑 Categories</h3>
+    <div class="category-buttons" id="categoryButtons">
+      <button class="active">All Books</button>
+      <button>Biography</button>
+      <button>Business</button>
+      <button>Fantasy</button>
+      <button>Fiction</button>
+      <button>History</button>
+      <button>Mystery</button>
+      <button>Non-Fiction</button>
+      <button>Science</button>
+      <button>Self-Help</button>
+      <button>Technology</button>
+    </div>
+  </section>
+
+  <!-- BOOK SECTION -->
+  <section class="book-section" id="bookSection">
+    <div class="no-books" id="noBooks">
+      <div class="icon">📖</div>
+      <h2>No books found</h2>
+      <p>Try adjusting your search or category filter</p>
+    </div>
+  </section> 
+</body>
+</html>

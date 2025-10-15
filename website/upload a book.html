@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload a Book</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      width: 400px;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .container:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      color: #333;
+      font-size: 28px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      text-align: left;
+      font-weight: 500;
+      color: #444;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #4a90e2;
+      box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    input[type="submit"] {
+      background: #4a90e2;
+      color: white;
+    }
+
+    input[type="submit"]:hover {
+      background: #357abd;
+      transform: scale(1.03);
+    }
+
+    input[type="reset"] {
+      background: #ccc;
+      color: #333;
+    }
+
+    input[type="reset"]:hover {
+      background: #aaa;
+      transform: scale(1.03);
+    }
+
+    .note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Upload a Book</h1>
+    <form>
+      <label>Book Title*</label>
+      <input type="text" placeholder="Enter book name" required />
+
+      <label>Author*</label>
+      <input type="text" placeholder="Enter author name" required />
+
+      <label>Description*</label>
+      <input type="text" placeholder="About the book" required />
+
+      <label>Category*</label>
+      <select required>
+        <option value="">Select a category</option>
+        <option>Biography</option>
+        <option>Business</option>
+        <option>Fantasy</option>
+        <option>Fiction</option>
+        <option>History</option>
+        <option>Mystery</option>
+        <option>Non-Fiction</option>
+        <option>Science</option>
+        <option>Self-Help</option>
+        <option>Technology</option>
+      </select>
+
+      <label>PDF URL*</label>
+      <input type="file" placeholder="Enter a valid file" required />
+
+      <label>Cover Image URL*</label>
+      <input type="file" placeholder="Enter cover image file" required />
+
+      <label>Price</label>
+      <input type="number" placeholder="Enter price" />
+
+      <div class="button-group">
+        <input type="reset" value="Reset" />
+        <input type="Submit" value="Submit"/>
+      </div>
+
+      <p class="note">All fields marked * are required</p>
+      <a href="website.html">Home</a>
+    </form>
+  </div>
+
+</body>
+</html>
